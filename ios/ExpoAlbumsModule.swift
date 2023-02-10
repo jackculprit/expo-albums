@@ -151,7 +151,14 @@ public class ExpoAlbumsModule: Module {
                             do {
                                 let saveResult = try self.saveImage(image: image)
                                 let saveResultUrl = saveResult.url.absoluteString
-                                allFinalImageUrls.append(saveResultUrl)
+
+                                let aspectRatio: Double = Double(object.pixelWidth) / Double(object.pixelHeight)
+
+                                allFinalImageUrls.append([
+                                    "aspectRatio": aspectRatio,
+                                    "filepath": saveResultUrl
+                                ])
+                                // allFinalImageUrls.append(saveResultUrl)
                             } catch {
                                 callback(.success("Error \(error)"))
                             }

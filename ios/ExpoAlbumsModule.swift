@@ -118,7 +118,7 @@ public class ExpoAlbumsModule: Module {
                         return callback(.success("No first asset found"))
                     }
 
-                    let size = CGSize(width: 50, height: 50)
+                    let size = CGSize(width: 141.33, height: 271.36)
                     let options = PHImageRequestOptions()
 
                     options.resizeMode = .exact
